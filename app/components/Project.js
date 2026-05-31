@@ -7,35 +7,48 @@ export default function Projects() {
       description: 'A Netflix-inspired platform recreating the interface and basic functionality with responsive design',
       tags: ['HTML', 'CSS', 'JavaScript'],
       color: 'cyan',
-      emoji: '🎬'
+      emoji: '🎬',
+      link: '#'
     },
     {
       title: 'Spotify Clone',
       description: 'A Spotify-like music application interface with interactive features and smooth animations',
       tags: ['React', 'CSS', 'JavaScript'],
       color: 'purple',
-      emoji: '🎵'
+      emoji: '🎵',
+      link: 'https://sanket-4545.github.io/SDB-music/'
     },
     {
       title: 'Hacking Terminal',
       description: 'An interactive terminal emulator with command simulation and visual effects',
       tags: ['HTML', 'CSS', 'JavaScript'],
       color: 'pink',
-      emoji: '⌨️'
+      emoji: '⌨️',
+      link: '#'
     },
     {
       title: 'Random Color Change Box',
       description: 'Interactive project demonstrating DOM manipulation and event handling with color transitions',
       tags: ['JavaScript', 'CSS', 'DOM API'],
       color: 'cyan',
-      emoji: '🎨'
+      emoji: '🎨',
+      link: 'https://sanket-4545.github.io/Random-colour-change-box/'
     },
     {
       title: 'Login Page',
       description: 'A secure and responsive login page with form validation and smooth user experience',
       tags: ['HTML', 'CSS', 'JavaScript'],
       color: 'purple',
-      emoji: '🔐'
+      emoji: '🔐',
+      link: 'https://sanket-4545.github.io/login-page/'
+    },
+    {
+      title: 'Todo List',
+      description: 'A task manager app with add, complete, and remove functionality for daily productivity',
+      tags: ['React', 'CSS', 'JavaScript'],
+      color: 'pink',
+      emoji: '📝',
+      link: 'https://todo-list-drab-eight-19.vercel.app/'
     },
   ];
 
@@ -97,9 +110,14 @@ export default function Projects() {
                     ))}
                   </div>
 
-                  <button className={`w-full py-2 px-4 rounded-lg border-2 ${colors.button} font-semibold hover:${colors.bg} transition-all duration-300 group-hover:translate-x-1`}>
+                  <a
+                    href={project.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={`block text-center w-full py-2 px-4 rounded-lg border-2 ${colors.button} font-semibold hover:${colors.bg} transition-all duration-300 group-hover:translate-x-1`}
+                  >
                     View Project →
-                  </button>
+                  </a>
                 </div>
               </div>
             );
