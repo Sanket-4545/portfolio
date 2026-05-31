@@ -1,0 +1,272 @@
+@import 'tailwindcss';
+@import 'tw-animate-css';
+
+:root {
+  /* Dark mode with neon accents */
+  --background: #0f172a;
+  --foreground: #e2e8f0;
+  --neon-cyan: #00d9ff;
+  --neon-purple: #d946ef;
+  --neon-pink: #ec4899;
+  --card-bg: #1e293b;
+  --border-color: #334155;
+}
+
+@layer base {
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background: linear-gradient(135deg, #0f172a 0%, #1a1f35 100%);
+    color: #e2e8f0;
+    font-family: 'Geist', system-ui, sans-serif;
+    overflow-x: hidden;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+}
+
+/* CSS 3D Animations */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+}
+
+@keyframes glow-pulse {
+  0%, 100% { 
+    box-shadow: 0 0 20px rgba(0, 217, 255, 0.3);
+  }
+  50% { 
+    box-shadow: 0 0 40px rgba(0, 217, 255, 0.6);
+  }
+}
+
+@keyframes rotate-3d {
+  0% { transform: rotateX(0deg) rotateY(0deg); }
+  50% { transform: rotateX(5deg) rotateY(10deg); }
+  100% { transform: rotateX(0deg) rotateY(0deg); }
+}
+
+@keyframes slide-up {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slide-in-left {
+  from {
+    opacity: 0;
+    transform: translateX(-40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes text-glow {
+  0%, 100% { 
+    text-shadow: 0 0 10px rgba(0, 217, 255, 0.3);
+  }
+  50% { 
+    text-shadow: 0 0 20px rgba(0, 217, 255, 0.6);
+  }
+}
+
+@keyframes gradient-shift {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+/* Additional animations */
+@keyframes shimmer {
+  0%, 100% { 
+    background-position: -1000px 0;
+  }
+  50% { 
+    background-position: 1000px 0;
+  }
+}
+
+@keyframes blob {
+  0%, 100% { 
+    transform: translate(0, 0) scale(1);
+  }
+  33% { 
+    transform: translate(30px, -50px) scale(1.1);
+  }
+  66% { 
+    transform: translate(-20px, 20px) scale(0.9);
+  }
+}
+
+@keyframes scale-in {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes border-glow {
+  0%, 100% {
+    border-color: rgba(0, 217, 255, 0.3);
+    box-shadow: 0 0 10px rgba(0, 217, 255, 0.2);
+  }
+  50% {
+    border-color: rgba(0, 217, 255, 0.6);
+    box-shadow: 0 0 20px rgba(0, 217, 255, 0.4);
+  }
+}
+
+@keyframes word-in {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Utility classes */
+.glow-cyan {
+  box-shadow: 0 0 20px rgba(0, 217, 255, 0.3);
+  transition: box-shadow 0.3s ease;
+}
+
+.glow-cyan:hover {
+  box-shadow: 0 0 30px rgba(0, 217, 255, 0.5);
+}
+
+.glow-purple {
+  box-shadow: 0 0 20px rgba(217, 70, 239, 0.3);
+  transition: box-shadow 0.3s ease;
+}
+
+.glow-purple:hover {
+  box-shadow: 0 0 30px rgba(217, 70, 239, 0.5);
+}
+
+.glow-pink {
+  box-shadow: 0 0 20px rgba(236, 72, 153, 0.3);
+  transition: box-shadow 0.3s ease;
+}
+
+.glow-pink:hover {
+  box-shadow: 0 0 30px rgba(236, 72, 153, 0.5);
+}
+
+.text-glow-cyan {
+  color: #00d9ff;
+  text-shadow: 0 0 10px rgba(0, 217, 255, 0.5);
+  animation: text-glow 3s ease-in-out infinite;
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.animate-rotate-3d {
+  animation: rotate-3d 4s ease-in-out infinite;
+}
+
+.animate-slide-up {
+  animation: slide-up 0.8s ease-out forwards;
+}
+
+.animate-slide-in-left {
+  animation: slide-in-left 0.8s ease-out forwards;
+}
+
+.animate-scale-in {
+  animation: scale-in 0.6s ease-out forwards;
+}
+
+.animate-blob {
+  animation: blob 5s ease-in-out infinite;
+}
+
+.preserve-3d {
+  transform-style: preserve-3d;
+  perspective: 1000px;
+}
+
+.perspective {
+  perspective: 1000px;
+}
+
+/* Scroll animations */
+section {
+  position: relative;
+}
+
+section > div,
+section > * {
+  animation-timeline: view();
+  animation-range: entry 0% cover 30%;
+}
+
+/* Cards hover enhancement */
+.card-hover {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.card-hover:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0, 217, 255, 0.15);
+}
+
+/* Gradient background animation */
+.animate-gradient {
+  background-size: 200% 200%;
+  animation: gradient-shift 6s ease infinite;
+}
+
+/* Neon border effect */
+.border-neon-cyan {
+  border: 2px solid #00d9ff;
+  box-shadow: inset 0 0 20px rgba(0, 217, 255, 0.1), 0 0 20px rgba(0, 217, 255, 0.3);
+}
+
+.border-neon-purple {
+  border: 2px solid #d946ef;
+  box-shadow: inset 0 0 20px rgba(217, 70, 239, 0.1), 0 0 20px rgba(217, 70, 239, 0.3);
+}
+
+.border-neon-pink {
+  border: 2px solid #ec4899;
+  box-shadow: inset 0 0 20px rgba(236, 72, 153, 0.1), 0 0 20px rgba(236, 72, 153, 0.3);
+}
+
+/* Word by word animation */
+.animate-word {
+  display: inline-block;
+  animation: word-in 0.6s ease-out forwards;
+  margin-right: 0.25em;
+}
+
+.animate-word:nth-child(1) { animation-delay: 0s; }
+.animate-word:nth-child(2) { animation-delay: 0.2s; }
+.animate-word:nth-child(3) { animation-delay: 0.4s; }
+.animate-word:nth-child(4) { animation-delay: 0.6s; }
+.animate-word:nth-child(5) { animation-delay: 0.8s; }
