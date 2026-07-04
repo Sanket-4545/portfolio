@@ -13,7 +13,7 @@ export default function About() {
           <div className="animate-slide-in-left preserve-3d">
             <div className="relative h-full flex flex-col">
               {/* Decorative background */}
-              <div className="absolute -inset-4 bg-gradient-to-r from-cyan-500/15 via-purple-500/15 to-pink-500/15 rounded-3xl blur-2xl"></div>
+              <div className="absolute -inset-4 bg-linear-to-r from-cyan-500/15 via-purple-500/15 to-pink-500/15 rounded-3xl blur-2xl"></div>
               
               {/* Main card */}
               <div className="relative bg-slate-900/50 border border-cyan-500/30 rounded-2xl overflow-hidden backdrop-blur-sm hover:glow-cyan transition-all duration-500 h-full flex flex-col">
@@ -27,11 +27,11 @@ export default function About() {
                     className="object-contain object-center group-hover:scale-105 transition-transform duration-500"
                     priority
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent"></div>
+                  <div className="absolute inset-0 bg-linear-to-t from-black/40 via-transparent to-transparent"></div>
                 </div>
                 
                 {/* Info section */}
-                <div className="p-6 bg-gradient-to-t from-slate-900/80 to-transparent">
+                <div className="p-6 bg-linear-to-t from-slate-900/80 to-transparent">
                   <p className="text-cyan-400 font-semibold text-center text-lg">MERN Stack Developer</p>
                   <p className="text-slate-400 text-center text-sm mt-2">Computer Science Engineering Student</p>
                 </div>
@@ -42,18 +42,18 @@ export default function About() {
           {/* Right side - About text with animations */}
           <div className="animate-slide-up flex flex-col justify-center">
             <div className="mb-8">
-              <h2 className="text-5xl font-bold mb-4 text-white">
+              <h2 className="text-5xl font-bold mb-4 text-slate-900 fraktur-heading">
                 <span className="animate-word">About</span>
                 <span className="animate-word">Me</span>
               </h2>
-              <h3 className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-purple-400">
-                <NameAnimator>Sanket Dadasaheb Bhojane</NameAnimator>
+              <h3 className="text-3xl font-bold text-slate-900 fraktur-heading">
+                <NameAnimator className="text-slate-900">Sanket Dadasaheb Bhojane</NameAnimator>
               </h3>
             </div>
-            <p className="text-slate-300 text-lg mb-4 leading-relaxed mt-6">
+            <p className="text-slate-700 text-lg mb-4 leading-relaxed mt-6">
               I am a Computer Science Engineering student with a strong interest in web development. I have solid knowledge of HTML, CSS, JavaScript, React, and Next.js. I also have experience with Node.js, Express, MongoDB and a basic understanding of C programming. I enjoy creating clean, responsive, and user-friendly websites.
             </p>
-            <p className="text-slate-300 text-lg mb-6 leading-relaxed">
+            <p className="text-slate-700 text-lg mb-6 leading-relaxed">
               My goal is to improve my technical skills and build projects that solve real-world problems. I focus on writing clean, maintainable code, delivering seamless user experiences, and constantly learning new technologies.
             </p>
 

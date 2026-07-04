@@ -15,10 +15,10 @@ export default function Hero() {
 
       <div className="relative z-10 container mx-auto px-4 flex flex-col lg:flex-row items-center justify-center gap-12 lg:gap-16">
         {/* Left side - Profile Photo with decorative elements */}
-        <div className="flex-shrink-0 animate-slide-in-left">
+        <div className="shrink-0 animate-slide-in-left">
           <div className="relative w-60 h-80 md:w-72 md:h-96">
             {/* Decorative background blur circles */}
-            <div className="absolute -inset-8 bg-gradient-to-r from-cyan-500/20 via-purple-500/20 to-pink-500/20 rounded-3xl blur-2xl animate-pulse"></div>
+            <div className="absolute -inset-8 bg-linear-to-r from-cyan-500/20 via-purple-500/20 to-pink-500/20 rounded-3xl blur-2xl animate-pulse"></div>
             
             {/* Photo container with enhanced styling */}
             <div className="relative w-full h-full rounded-3xl border-4 border-cyan-500/50 overflow-hidden shadow-2xl shadow-cyan-500/40 hover:shadow-cyan-500/60 transition-all duration-500 bg-slate-900/50 backdrop-blur-sm">
@@ -29,7 +29,7 @@ export default function Hero() {
               />
               
               {/* Overlay gradient */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent"></div>
+              <div className="absolute inset-0 bg-linear-to-t from-black/30 via-transparent to-transparent"></div>
             </div>
 
             {/* Floating corner accent */}
@@ -42,29 +42,29 @@ export default function Hero() {
         <div className="flex flex-col items-center lg:items-start text-center lg:text-left max-w-2xl">
           {/* Main heading with 3D text effect */}
           <div className="animate-slide-up mb-4">
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight">
+            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight fraktur-heading">
               <div>
-                <NameAnimator className="text-white">Sanket</NameAnimator>
+                <NameAnimator className="text-slate-900 drop-shadow-[0_2px_8px_rgba(255,255,255,0.9)]">Sanket</NameAnimator>
               </div>
               <div>
-                <NameAnimator className="text-white">Dadasaheb</NameAnimator>
+                <NameAnimator className="text-slate-900 drop-shadow-[0_2px_8px_rgba(255,255,255,0.9)]">Dadasaheb</NameAnimator>
               </div>
               <div>
-                <NameAnimator className="text-glow-cyan">Bhojane</NameAnimator>
+                <NameAnimator className="text-cyan-700 drop-shadow-[0_0_14px_rgba(0,217,255,0.25)]">Bhojane</NameAnimator>
               </div>
             </h1>
           </div>
 
           {/* Role subtitle */}
           <div className="animate-slide-up mb-6" style={{ animationDelay: '0.1s' }}>
-            <p className="text-2xl md:text-3xl font-semibold text-cyan-400">
+            <p className="text-2xl md:text-3xl font-semibold text-cyan-700">
               MERN Stack Developer
             </p>
           </div>
 
           {/* Description */}
           <div className="animate-slide-up mb-8" style={{ animationDelay: '0.2s' }}>
-            <p className="text-base md:text-lg text-slate-300 leading-relaxed">
+            <p className="text-base md:text-lg text-slate-700 leading-relaxed">
               I build modern, responsive web applications using HTML, CSS and JavaScript. I focus on clean code, good UX and scalable solutions.
             </p>
           </div>
@@ -73,7 +73,7 @@ export default function Hero() {
           <div className="flex flex-col sm:flex-row gap-4 animate-slide-up" style={{ animationDelay: '0.3s' }}>
             <a 
               href="#projects" 
-              className="px-8 py-4 bg-gradient-to-r from-cyan-500 to-cyan-600 text-slate-950 font-bold rounded-lg hover:shadow-lg hover:shadow-cyan-500/50 transition-all duration-300 transform hover:scale-105 whitespace-nowrap"
+              className="px-8 py-4 bg-linear-to-r from-cyan-500 to-cyan-600 text-slate-950 font-bold rounded-lg hover:shadow-lg hover:shadow-cyan-500/50 transition-all duration-300 transform hover:scale-105 whitespace-nowrap"
             >
               Download CV
             </a>

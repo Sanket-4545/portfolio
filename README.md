@@ -34,3 +34,22 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+
+## Email Setup for Contact Messages
+
+The message form uses an API route at `app/api/messages/route.js` with `nodemailer`.
+
+To send email, create a `.env.local` file in the project root and add:
+
+```env
+SMTP_HOST=smtp.example.com
+SMTP_PORT=587
+SMTP_USER=your-smtp-username
+SMTP_PASS=your-smtp-password
+EMAIL_TO=your-email@example.com
+EMAIL_FROM=your-email@example.com
+```
+
+Then restart the Next.js server.
+
+If you want to send email from your personal inbox, use a supported SMTP provider such as Gmail (with app password), SendGrid, Mailgun, or another mail service.

@@ -56,8 +56,8 @@ export default function Projects() {
     <section id="projects" className="relative py-20 px-4 overflow-hidden">
       <div className="container mx-auto">
         <div className="mb-16 text-center animate-slide-up">
-          <h2 className="text-5xl font-bold mb-4 text-white">Projects</h2>
-          <p className="text-slate-400 text-lg">I have worked on several web development projects that showcase my skills and creativity</p>
+          <h2 className="text-5xl font-bold mb-4 text-slate-900 fraktur-heading">Projects</h2>
+          <p className="text-slate-700 text-lg">I have worked on several web development projects that showcase my skills and creativity</p>
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -96,8 +96,8 @@ export default function Projects() {
               >
                 <div className={`bg-slate-900/50 border ${colors.border} rounded-2xl p-6 backdrop-blur-sm transition-all duration-300 h-full flex flex-col hover:shadow-2xl hover:${colors.glow} hover:-translate-y-2`}>
                   <div className="text-5xl mb-4 group-hover:scale-125 transition-transform duration-300">{project.emoji}</div>
-                  <h3 className="text-2xl font-bold text-white mb-3">{project.title}</h3>
-                  <p className="text-slate-400 mb-4 flex-grow">{project.description}</p>
+                  <h3 className="text-2xl font-bold text-white mb-3 fraktur-heading">{project.title}</h3>
+                  <p className="text-slate-400 mb-4 grow">{project.description}</p>
                   
                   <div className="flex flex-wrap gap-2 mb-4">
                     {project.tags.map((tag, i) => (

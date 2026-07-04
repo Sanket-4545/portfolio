@@ -7,13 +7,12 @@ import Hero from '@/components/Hero';
 import About from '@/components/about';
 import Skills from '@/components/Skill';
 import Projects from '@/components/Project';
-import Messages from '@/components/Messages';
 import Contact from '@/components/contact';
 import Footer from '@/components/Footer';
 
 export default function Home() {
   return (
-    <div className="bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950 min-h-screen relative">
+    <div className="bg-(--background) min-h-screen relative">
       <AnimatedBackground />
       <CursorFlower />
       <Navigation />
@@ -22,7 +21,6 @@ export default function Home() {
         <About />
         <Skills />
         <Projects />
-        <Messages />
         <Contact />
       </main>
 

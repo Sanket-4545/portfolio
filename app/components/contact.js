@@ -13,14 +13,14 @@ export default function Contact() {
     <section id="contact" className="relative py-20 px-4 overflow-hidden">
       <div className="container mx-auto max-w-6xl">
         <div className="mb-16 text-center animate-slide-up">
-          <h2 className="text-5xl font-bold mb-4 text-white">Get in Touch</h2>
-          <p className="text-slate-400 text-lg">Connect with me on social media or reach out directly</p>
+          <h2 className="text-5xl font-bold mb-4 text-slate-900 fraktur-heading">Get in Touch</h2>
+          <p className="text-slate-700 text-lg">Connect with me on social media or reach out directly</p>
         </div>
 
         {/* Social Links Grid */}
         <div className="grid md:grid-cols-2 gap-8 mb-12">
           <div className="animate-slide-in-left">
-            <h3 className="text-2xl font-bold text-white mb-6">Connect With Me</h3>
+            <h3 className="text-2xl font-bold text-white mb-6 fraktur-heading">Connect With Me</h3>
             <div className="space-y-4">
               {socialLinks.map((link, idx) => (
                 <a
@@ -40,7 +40,7 @@ export default function Contact() {
 
           {/* Contact Info */}
           <div className="animate-slide-up">
-            <h3 className="text-2xl font-bold text-white mb-6">Contact Info</h3>
+            <h3 className="text-2xl font-bold text-white mb-6 fraktur-heading">Contact Info</h3>
             <div className="space-y-4">
               <div className="p-6 bg-slate-900/50 border border-cyan-500/20 rounded-lg hover:glow-cyan transition-all">
                 <p className="text-cyan-400 font-semibold mb-2">📧 Email</p>
@@ -54,7 +54,7 @@ export default function Contact() {
 
               <div className="p-6 bg-slate-900/50 border border-purple-500/20 rounded-lg hover:glow-purple transition-all">
                 <p className="text-purple-400 font-semibold mb-2">💬 Messages</p>
-                <p className="text-slate-300">Use the Messages section above to send me a message</p>
+                <p className="text-slate-300">Use the contact links above to reach out.</p>
               </div>
             </div>
           </div>

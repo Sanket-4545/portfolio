@@ -12,8 +12,8 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className="dark scroll-smooth">
-      <body className={`${geist.className} antialiased bg-slate-950 text-slate-100`}>
+    <html lang="en" className="scroll-smooth">
+      <body className={`${geist.className} antialiased bg-(--background) text-(--foreground)`}>
         {children}
       </body>
     </html>
