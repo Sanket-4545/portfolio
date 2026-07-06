@@ -8,6 +8,9 @@ export default function Hero() {
     <section id="hero" className="relative min-h-screen w-full flex items-center justify-center overflow-hidden pt-20">
       {/* Animated background elements */}
       <div className="absolute inset-0 overflow-hidden">
+        <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+          <div className="hero-pulse-circle"></div>
+        </div>
         <div className="absolute top-20 left-10 w-72 h-72 bg-purple-600/10 rounded-full blur-3xl animate-float"></div>
         <div className="absolute bottom-20 right-10 w-72 h-72 bg-cyan-600/10 rounded-full blur-3xl animate-float" style={{ animationDelay: '1s' }}></div>
         <div className="absolute top-1/2 left-1/2 w-96 h-96 bg-pink-600/5 rounded-full blur-3xl"></div>
@@ -29,7 +32,7 @@ export default function Hero() {
               />
               
               {/* Overlay gradient */}
-              <div className="absolute inset-0 bg-linear-to-t from-black/30 via-transparent to-transparent"></div>
+              <div className="absolute inset-0 bg-gradient-to-br from-cyan-400/20 via-purple-500/20 to-pink-400/20 opacity-0 hero-photo-overlay pointer-events-none"></div>
             </div>
 
             {/* Floating corner accent */}

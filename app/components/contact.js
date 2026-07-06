@@ -3,9 +3,9 @@
 export default function Contact() {
 
   const socialLinks = [
-    { icon: '💼', label: 'LinkedIn', href: 'https://linkedin.com' },
-    { icon: '📱', label: 'WhatsApp', href: 'https://wa.me/1234567890' },
-    { icon: '📷', label: 'Instagram', href: 'https://instagram.com' },
+    { icon: '💼', label: 'LinkedIn', href: 'www.linkedin.com/in/sanket-bhojane-33aa0032b' },
+    { icon: '📱', label: 'WhatsApp', href: 'https://wa.me/9699007631' },
+    { icon: '📷', label: 'Instagram', href: 'https://www.instagram.com/sanket.bhojane45' },
     { icon: '📧', label: 'Email', href: 'mailto:sanketdbhojane045@gmail.com' },
   ];
 

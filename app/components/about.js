@@ -2,7 +2,8 @@
 
 import Image from 'next/image';
 import NameAnimator from './NameAnimator';
-import Sanket from './image/Sanket.jpg';
+import SanketAbout from './image/sanketabout.jpg';
+import Orb from './Orb';
 
 export default function About() {
   return (
@@ -15,25 +16,33 @@ export default function About() {
               {/* Decorative background */}
               <div className="absolute -inset-4 bg-linear-to-r from-cyan-500/15 via-purple-500/15 to-pink-500/15 rounded-3xl blur-2xl"></div>
               
-              {/* Main card */}
-              <div className="relative bg-slate-900/50 border border-cyan-500/30 rounded-2xl overflow-hidden backdrop-blur-sm hover:glow-cyan transition-all duration-500 h-full flex flex-col">
-                {/* Photo container */}
-
-                <div className="flex-1 relative overflow-hidden group">
-                  <Image
-                    src={Sanket}
-                    alt="Sanket"
-                    fill
-                    className="object-contain object-center group-hover:scale-105 transition-transform duration-500"
-                    priority
+              <div className="relative h-full flex flex-col rounded-3xl overflow-hidden">
+                <div className="absolute inset-0 z-0">
+                  <Orb
+                    hoverIntensity={2}
+                    rotateOnHover
+                    hue={0}
+                    forceHoverState={false}
+                    backgroundColor="#000000"
                   />
-                  <div className="absolute inset-0 bg-linear-to-t from-black/40 via-transparent to-transparent"></div>
                 </div>
-                
-                {/* Info section */}
-                <div className="p-6 bg-linear-to-t from-slate-900/80 to-transparent">
-                  <p className="text-cyan-400 font-semibold text-center text-lg">MERN Stack Developer</p>
-                  <p className="text-slate-400 text-center text-sm mt-2">Computer Science Engineering Student</p>
+
+                <div className="relative z-10 bg-slate-900/85 border border-cyan-500/30 rounded-3xl overflow-hidden backdrop-blur-sm hover:glow-cyan transition-all duration-500 h-full p-4 sm:p-6">
+                  <div className="relative rounded-3xl overflow-hidden border border-cyan-500/10 shadow-2xl shadow-cyan-500/10 hover:shadow-cyan-500/30 transition-shadow duration-500 h-80 sm:h-[32rem]">
+                    <Image
+                      src={SanketAbout}
+                      alt="Sanket About"
+                      fill
+                      className="object-cover hover:scale-105 transition-transform duration-500"
+                      priority
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-br from-cyan-400/20 via-purple-500/15 to-pink-400/15 pointer-events-none"></div>
+                  </div>
+
+                  <div className="mt-4 p-6 bg-slate-900/80 rounded-3xl border border-white/10 shadow-inner">
+                    <p className="text-cyan-400 font-semibold text-center text-lg">MERN Stack Developer</p>
+                    <p className="text-slate-400 text-center text-sm mt-2">Computer Science Engineering Student</p>
+                  </div>
                 </div>
               </div>
             </div>
