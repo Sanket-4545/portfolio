@@ -1,83 +1,14 @@
 'use client';
 
-import { Mesh, Plane, Program, Renderer, Vec3 } from 'ogl';
-import { useEffect, useRef } from 'react';
-import styles from './Orb.module.css';
-
 export default function Orb({
   hue = 0,
-  hoverIntensity = 0.2,
-  rotateOnHover = true,
-  forceHoverState = false,
   backgroundColor = '#000000'
 }) {
-  const ctnDom = useRef(null);
-
-  const vert = /* glsl */ `
-    precision highp float;
-    attribute vec2 position;
-    attribute vec2 uv;
-    varying vec2 vUv;
-    void main() {
-      vUv = uv;
-      gl_Position = vec4(position, 0.0, 1.0);
-    }
-  `;
-
-  const frag = /* glsl */ `
-    precision highp float;
-
-    uniform float iTime;
-    uniform vec3 iResolution;
-    uniform float hue;
-    uniform float hover;
-    uniform float rot;
-    uniform float hoverIntensity;
-    uniform vec3 backgroundColor;
-    varying vec2 vUv;
-
-    vec3 rgb2yiq(vec3 c) {
-      float y = dot(c, vec3(0.299, 0.587, 0.114));
-      float i = dot(c, vec3(0.596, -0.274, -0.322));
-      float q = dot(c, vec3(0.211, -0.523, 0.312));
-      return vec3(y, i, q);
-    }
-
-    vec3 yiq2rgb(vec3 c) {
-      float r = c.x + 0.956 * c.y + 0.621 * c.z;
-      float g = c.x - 0.272 * c.y - 0.647 * c.z;
-      float b = c.x - 1.106 * c.y + 1.703 * c.z;
-      return vec3(r, g, b);
-    }
-
-    vec3 adjustHue(vec3 color, float hueDeg) {
-      float hueRad = hueDeg * 3.14159265 / 180.0;
-      vec3 yiq = rgb2yiq(color);
-      float cosA = cos(hueRad);
-      float sinA = sin(hueRad);
-      float i = yiq.y * cosA - yiq.z * sinA;
-      float q = yiq.y * sinA + yiq.z * cosA;
-      yiq.y = i;
-      yiq.z = q;
-      return yiq2rgb(yiq);
-    }
-
-    vec3 hash33(vec3 p3) {
-      p3 = fract(p3 * vec3(0.1031, 0.11369, 0.13787));
-      p3 += dot(p3, p3.yxz + 19.19);
-      return -1.0 + 2.0 * fract(vec3(
-        p3.x + p3.y,
-        p3.x + p3.z,
-        p3.y + p3.z
-      ) * p3.zyx);
-    }
-
-    float snoise3(vec3 p) {
-      const float K1 = 0.333333333;
-      const float K2 = 0.166666667;
-      vec3 i = floor(p + (p.x + p.y + p.z) * K1);
-      vec3 d0 = p - (i - (i.x + i.y + i.z) * K2);
-      vec3 e = step(vec3(0.0), d0 - d0.yzx);
+  // Removed OGL WebGL rendering - replaced with simple CSS circle
+  return (
+    <div className="w-64 h-64 rounded-full border-2 border-cyan-500 opacity-20"></div>
+  );
+}
       vec3 i1 = e * (1.0 - e.zxy);
       vec3 i2 = 1.0 - e.zxy * (1.0 - e);
       vec3 d1 = d0 - (i1 - K2);
@@ -185,7 +116,18 @@ export default function Orb({
     }
   `;
 
+  const isTouchDevice = () => {
+    if (typeof window === 'undefined') return false;
+    return (
+      'ontouchstart' in window ||
+      navigator.maxTouchPoints > 0 ||
+      window.matchMedia('(pointer: coarse)').matches
+    );
+  };
+
   useEffect(() => {
+    if (isTouchDevice()) return;
+
     const container = ctnDom.current;
     if (!container) return;
 
