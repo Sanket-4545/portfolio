@@ -11,7 +11,7 @@ export default function Projects() {
       color: 'cyan',
       emoji: '🛕',
       status: 'In Progress',
-      link: '#'
+      link: 'https://wariseva.vercel.app/'
     },
     {
       title: 'Personal Portfolio Website',
@@ -19,7 +19,7 @@ export default function Projects() {
       tags: ['Next.js', 'Tailwind CSS', 'JavaScript', 'Vercel'],
       color: 'purple',
       emoji: '💼',
-      link: '#'
+      link: 'https://sanketbhojane.me'
     },
     {
       title: 'To-Do List Application',
