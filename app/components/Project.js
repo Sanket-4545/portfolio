@@ -35,8 +35,8 @@ export default function Projects() {
     <section id="projects" className="relative py-20 px-4 overflow-hidden">
       <div className="container mx-auto">
         <Reveal className="mb-16 text-center">
-          <h2 className="text-5xl font-bold mb-4 text-slate-900">Projects</h2>
-          <p className="text-slate-700 text-lg">I have worked on several web development projects that showcase my skills and creativity</p>
+          <h2 className="text-5xl font-bold mb-4 text-slate-100">Projects</h2>
+          <p className="text-slate-400 text-lg">I have worked on several web development projects that showcase my skills and creativity</p>
         </Reveal>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -44,21 +44,21 @@ export default function Projects() {
             const colorClasses = {
               cyan: {
                 border: 'border-cyan-500/20',
-                text: 'text-cyan-600',
-                button: 'border-cyan-500 text-cyan-600',
-                bg: 'bg-cyan-50',
+                text: 'text-cyan-400',
+                button: 'border-cyan-500 text-cyan-400',
+                bg: 'bg-cyan-500/10',
               },
               purple: {
                 border: 'border-purple-500/20',
-                text: 'text-purple-600',
-                button: 'border-purple-500 text-purple-600',
-                bg: 'bg-purple-50',
+                text: 'text-purple-400',
+                button: 'border-purple-500 text-purple-400',
+                bg: 'bg-purple-500/10',
               },
               pink: {
                 border: 'border-pink-500/20',
-                text: 'text-pink-600',
-                button: 'border-pink-500 text-pink-600',
-                bg: 'bg-pink-50',
+                text: 'text-pink-400',
+                button: 'border-pink-500 text-pink-400',
+                bg: 'bg-pink-500/10',
               }
             };
             
@@ -69,17 +69,17 @@ export default function Projects() {
                 key={idx}
                 delay={(idx % 3) * 120}
               >
-                <div className={`bg-white border ${colors.border} rounded-2xl p-6 shadow-sm lift-hover h-full flex flex-col group`}>
+                <div className={`bg-slate-800/40 border ${colors.border} rounded-2xl p-6 shadow-sm lift-hover h-full flex flex-col group`}>
                   <div className="flex items-center justify-between mb-4">
                     <div className="text-5xl transition-transform duration-300 group-hover:scale-110 group-hover:-rotate-6">{project.emoji}</div>
                     {project.status && (
-                      <span className="text-xs px-3 py-1 rounded-full bg-amber-50 text-amber-600 border border-amber-500/30 font-semibold">
+                      <span className="text-xs px-3 py-1 rounded-full bg-amber-500/10 text-amber-400 border border-amber-500/30 font-semibold">
                         {project.status}
                       </span>
                     )}
                   </div>
-                  <h3 className="text-2xl font-bold text-slate-900 mb-3">{project.title}</h3>
-                  <p className="text-slate-600 mb-4 grow">{project.description}</p>
+                  <h3 className="text-2xl font-bold text-slate-100 mb-3">{project.title}</h3>
+                  <p className="text-slate-400 mb-4 grow">{project.description}</p>
                   
                   <div className="flex flex-wrap gap-2 mb-4">
                     {project.tags.map((tag, i) => (
