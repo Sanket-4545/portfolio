@@ -1,6 +1,5 @@
 'use client';
 import { useState, useEffect } from 'react';
-import './loader.css';
 
 export default function InitialLoader() {
   const [loading, setLoading] = useState(true);

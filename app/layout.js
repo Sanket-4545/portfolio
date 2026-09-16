@@ -1,5 +1,6 @@
 import { Poppins, Space_Grotesk } from 'next/font/google'
 import './globals.css'
+import './components/loader.css'
 import InitialLoader from './components/InitialLoader'
 
 const poppins = Poppins({
