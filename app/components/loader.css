@@ -265,6 +265,15 @@
   margin: 0 0 24px 0;
 }
 
+.loader-percentage {
+  font-family: var(--font-space-grotesk), sans-serif;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #f1f5f9;
+  margin-bottom: 8px;
+  text-shadow: 0 0 15px rgba(14, 165, 233, 0.5);
+}
+
 .loader-status {
   font-size: 0.75rem;
   letter-spacing: 0.3em;
@@ -316,6 +325,10 @@
   
   .loader-role {
     font-size: 0.75rem;
+  }
+  
+  .loader-percentage {
+    font-size: 2rem;
   }
   
   .loader-particle:nth-child(n+8) {

@@ -29,7 +29,7 @@ export const viewport = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className={`scroll-smooth ${poppins.variable} ${spaceGrotesk.variable}`}>
+    <html lang="en" className={`scroll-smooth ${poppins.variable} ${spaceGrotesk.variable}`} style={{ backgroundColor: '#050508' }}>
       <body className="antialiased" style={{background: 'var(--background)', color: 'var(--foreground)'}}>
         <InitialLoader />
         {children}

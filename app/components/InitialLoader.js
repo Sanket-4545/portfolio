@@ -5,21 +5,41 @@ import './loader.css';
 export default function InitialLoader() {
   const [loading, setLoading] = useState(true);
   const [fading, setFading] = useState(false);
+  const [progress, setProgress] = useState(0);
 
   useEffect(() => {
+    let interval;
+    // Increment progress quickly to 90% while waiting for page load
+    interval = setInterval(() => {
+      setProgress((prev) => {
+        if (prev >= 90) return prev;
+        const increment = Math.random() * 15;
+        return Math.min(90, Math.floor(prev + increment));
+      });
+    }, 100);
+
     const handleLoad = () => {
-      setFading(true);
-      setTimeout(() => setLoading(false), 800);
+      clearInterval(interval);
+      setProgress(100);
+      
+      // Short timeout to let the user see 100% before fading out
+      setTimeout(() => {
+        setFading(true);
+        setTimeout(() => setLoading(false), 800);
+      }, 150);
     };
 
     if (document.readyState === 'complete') {
-      // Just a tiny timeout to ensure browser paints before fading
-      const timer = setTimeout(handleLoad, 50);
-      return () => clearTimeout(timer);
+      handleLoad();
     } else {
       window.addEventListener('load', handleLoad);
-      return () => window.removeEventListener('load', handleLoad);
+      return () => {
+        clearInterval(interval);
+        window.removeEventListener('load', handleLoad);
+      };
     }
+
+    return () => clearInterval(interval);
   }, []);
 
   if (!loading) return null;
@@ -62,6 +82,7 @@ export default function InitialLoader() {
         <div className="loader-text-wrapper">
           <h1 className="loader-name">SANKET</h1>
           <p className="loader-role">MERN STACK DEVELOPER</p>
+          <div className="loader-percentage">{progress}%</div>
           <div className="loader-status">
             LOADING<span className="loader-dots"></span>
           </div>
