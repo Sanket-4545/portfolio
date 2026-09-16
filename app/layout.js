@@ -1,5 +1,6 @@
 import { Poppins, Space_Grotesk } from 'next/font/google'
 import './globals.css'
+import InitialLoader from './components/InitialLoader'
 
 const poppins = Poppins({
   subsets: ['latin'],
@@ -30,6 +31,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" className={`scroll-smooth ${poppins.variable} ${spaceGrotesk.variable}`}>
       <body className="antialiased" style={{background: 'var(--background)', color: 'var(--foreground)'}}>
+        <InitialLoader />
         {children}
       </body>
     </html>
