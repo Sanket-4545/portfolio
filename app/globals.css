@@ -11,6 +11,11 @@
   --accent-purple: #8b5cf6;
 }
 
+html, body {
+  background-color: #050508;
+  color-scheme: dark;
+}
+
 @layer base {
   * {
     margin: 0;
