@@ -8,37 +8,45 @@ export default function InitialLoader() {
 
   useEffect(() => {
     let interval;
-    // Increment progress quickly to 90% while waiting for page load
-    interval = setInterval(() => {
-      setProgress((prev) => {
-        if (prev >= 90) return prev;
-        const increment = Math.random() * 15;
-        return Math.min(90, Math.floor(prev + increment));
-      });
-    }, 100);
+    const minimumLoadingTime = 2000;
+    const startTime = Date.now();
+    let isLoaded = document.readyState === 'complete';
 
-    const handleLoad = () => {
+    const finishLoading = () => {
       clearInterval(interval);
       setProgress(100);
-      
-      // Short timeout to let the user see 100% before fading out
       setTimeout(() => {
         setFading(true);
         setTimeout(() => setLoading(false), 800);
       }, 150);
     };
 
-    if (document.readyState === 'complete') {
-      handleLoad();
-    } else {
-      window.addEventListener('load', handleLoad);
-      return () => {
-        clearInterval(interval);
-        window.removeEventListener('load', handleLoad);
-      };
+    interval = setInterval(() => {
+      const elapsed = Date.now() - startTime;
+      
+      // Calculate progress based on time elapsed (aiming for 100% at 2 seconds)
+      let nextProgress = Math.min(99, Math.floor((elapsed / minimumLoadingTime) * 100));
+
+      if (isLoaded && elapsed >= minimumLoadingTime) {
+        finishLoading();
+        return;
+      }
+
+      setProgress(nextProgress);
+    }, 50);
+
+    const handleLoadEvent = () => {
+      isLoaded = true;
+    };
+
+    if (!isLoaded) {
+      window.addEventListener('load', handleLoadEvent);
     }
 
-    return () => clearInterval(interval);
+    return () => {
+      clearInterval(interval);
+      window.removeEventListener('load', handleLoadEvent);
+    };
   }, []);
 
   if (!loading) return null;
