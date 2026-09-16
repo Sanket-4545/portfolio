@@ -91,7 +91,7 @@ export default function Hero() {
 
         {/* Profile Photo with animated glow ring & particles */}
         <div className="shrink-0 hero-photo-wrap animate-fade-in-scale">
-          <div className="relative" style={{ width: 240, height: 320 }}>
+          <div className="relative hero-image-container">
             {/* Rotating gradient ring */}
             <div className="hero-ring" />
             {/* Particle orbit */}

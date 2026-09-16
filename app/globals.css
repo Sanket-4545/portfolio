@@ -1168,6 +1168,18 @@
   position: relative;
 }
 
+.hero-image-container {
+  width: 240px;
+  height: 320px;
+}
+
+@media (min-width: 769px) {
+  .hero-image-container {
+    width: 288px;
+    height: 384px;
+  }
+}
+
 /* Rotating gradient ring behind photo */
 .hero-ring {
   position: absolute;
