@@ -1,5 +1,7 @@
 'use client';
 
+import Image from 'next/image';
+
 export default function Contact() {
 
   const socialLinks = [
@@ -15,6 +17,26 @@ export default function Contact() {
         <div className="mb-16 text-center">
           <h2 className="text-5xl font-bold mb-4 text-slate-100">Get in Touch</h2>
           <p className="text-slate-400 text-lg">Connect with me on social media or reach out directly</p>
+
+          {/* Photo with animated rings */}
+          <div className="contact-photo-wrap">
+            <div className="contact-photo-ring contact-photo-ring--1" />
+            <div className="contact-photo-ring contact-photo-ring--2" />
+            <div className="contact-photo-glow" />
+            <div className="contact-photo-orbit">
+              <span className="contact-photo-dot contact-photo-dot--1" />
+              <span className="contact-photo-dot contact-photo-dot--2" />
+            </div>
+            <Image
+              src="/1777462487794.jpg"
+              alt="Sanket Dadasaheb Bhojane"
+              width={160}
+              height={160}
+              className="contact-photo-img"
+              sizes="160px"
+              priority={false}
+            />
+          </div>
         </div>
 
         {/* Social Links Grid */}

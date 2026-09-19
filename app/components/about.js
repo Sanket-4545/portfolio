@@ -2,7 +2,6 @@
 
 import Image from 'next/image';
 import Reveal from './Reveal';
-import sanketAbout from './image/sanketabout.jpg';
 
 export default function About() {
   return (
@@ -16,13 +15,17 @@ export default function About() {
 
         <div className="flex flex-col md:flex-row items-center gap-8 md:gap-12">
           <Reveal delay={100} className="shrink-0">
-            <div className="relative w-48 h-48 md:w-56 md:h-56 rounded-full overflow-hidden border-4 border-cyan-500/30 shadow-lg">
+            <div className="about-photo-wrap">
+              <div className="about-photo-ring" />
               <Image
-                src={sanketAbout}
+                src="/Sanket.jpg"
                 alt="Sanket Dadasaheb Bhojane"
-                fill
-                className="object-cover"
+                width={224}
+                height={224}
+                className="about-photo"
                 sizes="(max-width: 768px) 192px, 224px"
+                style={{ objectPosition: 'center 15%' }}
+                priority={false}
               />
             </div>
           </Reveal>

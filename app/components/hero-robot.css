@@ -1,0 +1,247 @@
+/* ============================================================
+   HERO ROBOT EXPERIMENT
+   Isolated 3D robot visual for the Hero section.
+   Remove this file + HeroRobot3D import to revert to HeroVisual3D.
+   ============================================================ */
+
+/* ── Robot container ── */
+.hero-robot {
+  position: relative;
+  width: 320px;
+  height: 380px;
+  pointer-events: none;
+  user-select: none;
+  animation: hero-robot-float 6s ease-in-out infinite;
+}
+
+.hero-robot-svg {
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+
+/* ── Robot float ── */
+@keyframes hero-robot-float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-12px); }
+}
+
+/* ── Head tilt ── */
+.hero-robot-head {
+  animation: hero-robot-tilt 8s ease-in-out infinite;
+  transform-origin: 150px 110px;
+}
+
+@keyframes hero-robot-tilt {
+  0%, 100% { transform: rotate(0deg) translateX(0); }
+  30% { transform: rotate(0.8deg) translateX(1px); }
+  70% { transform: rotate(-0.6deg) translateX(-1px); }
+}
+
+/* ── Eye blink ── */
+.hero-robot-eyes {
+  animation: hero-robot-blink 4.5s ease-in-out infinite;
+  transform-origin: center;
+}
+
+@keyframes hero-robot-blink {
+  0%, 92%, 100% { transform: scaleY(1); }
+  95% { transform: scaleY(0.08); }
+}
+
+/* ── Eye glow pulse ── */
+.hero-robot-eye-glow {
+  animation: hero-robot-eye-pulse 3s ease-in-out infinite alternate;
+}
+
+@keyframes hero-robot-eye-pulse {
+  0% { opacity: 0.6; }
+  100% { opacity: 1; }
+}
+
+/* ── Core pulse ── */
+.hero-robot-core {
+  animation: hero-robot-core-breathe 3.5s ease-in-out infinite alternate;
+  transform-origin: center;
+}
+
+@keyframes hero-robot-core-breathe {
+  0% { opacity: 0.65; transform: scale(1); }
+  100% { opacity: 1; transform: scale(1.15); }
+}
+
+/* ── Chest glow ── */
+.hero-robot-chest-glow {
+  animation: hero-robot-chest-pulse 4s ease-in-out infinite alternate;
+}
+
+@keyframes hero-robot-chest-pulse {
+  0% { opacity: 0.5; }
+  100% { opacity: 0.85; }
+}
+
+/* ── Chest data lines ── */
+.hero-robot-data {
+  animation: hero-robot-data-scroll 6s linear infinite;
+}
+
+@keyframes hero-robot-data-scroll {
+  0% { strokeDashoffset: 0; }
+  100% { strokeDashoffset: -40; }
+}
+
+/* ── Sensor pulse ── */
+.hero-robot-sensor {
+  animation: hero-robot-sensor-pulse 2.8s ease-in-out infinite alternate;
+}
+
+@keyframes hero-robot-sensor-pulse {
+  0% { opacity: 0.35; }
+  100% { opacity: 0.85; }
+}
+
+/* ── Orbiting light trails ── */
+.hero-robot-orbit {
+  animation: hero-robot-orbit-spin 16s linear infinite;
+  transform-origin: 150px 190px;
+}
+
+.hero-robot-orbit--2 {
+  animation: hero-robot-orbit-spin-2 22s linear infinite reverse;
+  transform-origin: 150px 190px;
+}
+
+@keyframes hero-robot-orbit-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes hero-robot-orbit-spin-2 {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* ── Floating particles ── */
+.hero-robot-particle {
+  animation: hero-robot-particle-drift 5s ease-in-out infinite alternate;
+}
+
+.hero-robot-particle:nth-child(2) { animation-delay: -0.8s; animation-duration: 6s; }
+.hero-robot-particle:nth-child(3) { animation-delay: -1.6s; animation-duration: 4.5s; }
+.hero-robot-particle:nth-child(4) { animation-delay: -2.4s; animation-duration: 5.5s; }
+.hero-robot-particle:nth-child(5) { animation-delay: -0.4s; animation-duration: 7s; }
+.hero-robot-particle:nth-child(6) { animation-delay: -1.2s; animation-duration: 5.2s; }
+.hero-robot-particle:nth-child(7) { animation-delay: -3s; animation-duration: 6.5s; }
+.hero-robot-particle:nth-child(8) { animation-delay: -2s; animation-duration: 4.8s; }
+
+@keyframes hero-robot-particle-drift {
+  0% { opacity: 0.25; transform: translateY(0) scale(1); }
+  100% { opacity: 0.7; transform: translateY(-5px) scale(1.2); }
+}
+
+/* ── Floating symbols ── */
+.hero-robot-sym {
+  animation: hero-robot-sym-float 8s ease-in-out infinite;
+}
+
+.hero-robot-sym:nth-child(2) { animation-delay: -2s; animation-duration: 9s; }
+.hero-robot-sym:nth-child(3) { animation-delay: -4s; animation-duration: 7s; }
+.hero-robot-sym:nth-child(4) { animation-delay: -1s; animation-duration: 10s; }
+.hero-robot-sym:nth-child(5) { animation-delay: -3s; animation-duration: 8.5s; }
+
+@keyframes hero-robot-sym-float {
+  0%, 100% { opacity: 0.18; transform: translate(0, 0); }
+  50% { opacity: 0.38; transform: translate(3px, -5px); }
+}
+
+/* ── Back glow breathe ── */
+.hero-robot-glow {
+  animation: hero-robot-glow-breathe 5s ease-in-out infinite alternate;
+}
+
+@keyframes hero-robot-glow-breathe {
+  0% { opacity: 0.45; transform: scale(1); }
+  100% { opacity: 0.7; transform: scale(1.04); }
+}
+
+/* ============================================================
+   HERO ROBOT — RESPONSIVE
+   ============================================================ */
+
+@media (max-width: 1023px) {
+  .hero-robot {
+    width: 280px;
+    height: 340px;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-robot {
+    width: 240px;
+    height: 300px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-robot {
+    width: 200px;
+    height: 260px;
+  }
+}
+
+@media (max-width: 360px) {
+  .hero-robot {
+    width: 170px;
+    height: 230px;
+  }
+}
+
+/* ============================================================
+   HERO ROBOT — REDUCED MOTION
+   ============================================================ */
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-robot,
+  .hero-robot-head,
+  .hero-robot-eyes,
+  .hero-robot-eye-glow,
+  .hero-robot-core,
+  .hero-robot-chest-glow,
+  .hero-robot-data,
+  .hero-robot-sensor,
+  .hero-robot-orbit,
+  .hero-robot-orbit--2,
+  .hero-robot-particle,
+  .hero-robot-sym,
+  .hero-robot-glow {
+    animation: none !important;
+    transition: none !important;
+  }
+
+  .hero-robot {
+    transform: none !important;
+  }
+
+  .hero-robot-core {
+    opacity: 0.85;
+    transform: none;
+  }
+
+  .hero-robot-eye-glow {
+    opacity: 0.8;
+  }
+
+  .hero-robot-sensor {
+    opacity: 0.6;
+  }
+
+  .hero-robot-particle {
+    opacity: 0.4;
+    transform: none;
+  }
+
+  .hero-robot-sym {
+    opacity: 0.22;
+    transform: none;
+  }
+}
