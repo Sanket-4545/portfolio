@@ -5,6 +5,15 @@ import Reveal from './Reveal';
 export default function Projects() {
   const projects = [
     {
+      title: 'ScholarSetu',
+      description: 'A scholarship discovery platform that helps first-year B.Tech students in Maharashtra discover potentially suitable scholarship opportunities based on their caste category and annual family income. Shows matching schemes with eligibility information, official application and reference links, and a privacy-friendly flow using sessionStorage with no accounts or database required.',
+      tags: ['Next.js 16', 'React 19', 'JavaScript', 'HTML5', 'CSS', 'Session Storage'],
+      color: 'emerald',
+      emoji: '🎓',
+      link: 'https://scholarsetu-plum.vercel.app/',
+      sourceLink: 'https://github.com/Sanket-4545/ScholarSetu'
+    },
+    {
       title: 'Pandharpur Wari Management Platform',
       description: 'A full-stack platform to improve coordination between volunteers and pilgrims during the Pandharpur Wari. Includes emergency services, missing person support, lost & found, medical assistance, volunteer coordination, and an admin dashboard for managing emergency contacts.',
       tags: ['Next.js', 'Tailwind CSS', 'Node.js', 'Express.js', 'MongoDB'],
@@ -59,6 +68,12 @@ export default function Projects() {
                 text: 'text-pink-400',
                 button: 'border-pink-500 text-pink-400',
                 bg: 'bg-pink-500/10',
+              },
+              emerald: {
+                border: 'border-emerald-500/20',
+                text: 'text-emerald-400',
+                button: 'border-emerald-500 text-emerald-400',
+                bg: 'bg-emerald-500/10',
               }
             };
             
@@ -92,14 +107,35 @@ export default function Projects() {
                     ))}
                   </div>
 
-                  <a
-                    href={project.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className={`block text-center w-full py-2 px-4 rounded-lg border-2 ${colors.button} font-semibold hover:${colors.bg} transition-colors`}
-                  >
-                    View Project →
-                  </a>
+                  {project.sourceLink ? (
+                    <div className="flex flex-col sm:flex-row gap-3">
+                      <a
+                        href={project.sourceLink}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className={`block text-center w-full flex-1 py-2 px-4 rounded-lg border-2 ${colors.button} font-semibold hover:${colors.bg} transition-colors`}
+                      >
+                        View Source
+                      </a>
+                      <a
+                        href={project.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className={`block text-center w-full flex-1 py-2 px-4 rounded-lg border-2 ${colors.button} font-semibold hover:${colors.bg} transition-colors`}
+                      >
+                        Live Demo
+                      </a>
+                    </div>
+                  ) : (
+                    <a
+                      href={project.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className={`block text-center w-full py-2 px-4 rounded-lg border-2 ${colors.button} font-semibold hover:${colors.bg} transition-colors`}
+                    >
+                      View Project →
+                    </a>
+                  )}
                 </div>
               </Reveal>
             );
