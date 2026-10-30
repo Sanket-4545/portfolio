@@ -1,5 +1,6 @@
 import Navigation from '@/components/Navigation';
 import Background3D from '@/components/Background3D';
+import SplashCursor from '@/components/SplashCursor';
 import Hero from '@/components/Hero';
 import About from '@/components/about';
 import Certificates from '@/components/Certificates';
@@ -13,6 +14,7 @@ export default function Home() {
   return (
     <div className="min-h-screen relative overflow-hidden" style={{color: 'var(--foreground)'}}>
       <Background3D />
+      <SplashCursor />
       <div className="relative z-20">
         <Navigation />
         <main className="pt-16 relative z-10">
